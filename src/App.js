@@ -3,6 +3,7 @@ import {StyleSheet, View, Image, Text, SafeAreaView, Alert, TouchableOpacity} fr
 import Icon from 'react-native-vector-icons/Feather'
 
 import foto from './assets/foto.jpg'
+import Card from './components/Card'
 
 const App = () => {
 
@@ -32,25 +33,13 @@ const App = () => {
               <Icon name="linkedin" size={30} color='black'/>
             </TouchableOpacity> 
           </View>
-        </View>
-        <View style={style.card_container}>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text style={style.card_content_header}>Experiência Profissional</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>Bolsista no Projeto Athena, na Universidade Federal do Ceará</Text>
-            </View>
-          </View>
-          <View style={style.card}>
-            <View style={style.card_header}>
-              <Text style={style.card_content_header}>Formação</Text>
-            </View>
-            <View style={style.card_content}>
-              <Text style={style.card_content_text}>Matemática Industrial - Incompleto</Text>
-              <Text style={style.card_content_text}>Sistemas e Mídias Digitais - A concluir</Text>
-            </View>
-          </View>
+          <Card titulo="Formação Acadêmica">
+            <Text style={style.card_content_text}>Matemática Industrial - Incompleto</Text>
+            <Text style={style.card_content_text}>Sistemas e Mídias Digitais - Concluindo</Text>
+          </Card>
+          <Card titulo="Experiências Profissionais">
+            <Text style={style.card_content_text}>Bolsista no Projeto Athena, na UFC.</Text>
+          </Card>
         </View>
       </View>
     </>
@@ -90,28 +79,6 @@ const style = StyleSheet.create({
     justifyContent: 'space-evenly',
     width: '100%',
     marginTop: 20
-  },
-  card_container: {
-    width: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
-    marginTop: 20
-  },
-  card: {
-    width: '60%',
-    borderRadius: 5,
-    borderWidth: 1,
-    borderColor: '#939393',
-    padding: 10,
-    backgroundColor: '#fff',
-    marginBottom: 20
-  },
-  card_content: {
-    marginTop: 20,
-  },
-  card_content_header:{
-    color: 'black',
-    fontWeight: 'bold'
   },
   card_content_text:{
     color: '#939393',
